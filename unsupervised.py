@@ -1,3 +1,4 @@
+import sys
 from pathlib import Path
 
 import kagglehub
@@ -108,9 +109,9 @@ def plot(result, labels=None, title='', algorithm='tsne'):
     plt.figure(figsize=(8, 6))
 
     if labels is not None:
-        plt.scatter(result[f'{algorithm.upper()}_1'], result[f'{algorithm.upper()}_2'], c=labels)
+        plt.scatter(result[f'{algorithm.upper()}_1'], result[f'{algorithm.upper()}_2'], c=labels, cmap='viridis')
     else:
-        plt.scatter(result[f'{algorithm.upper()}_1'], result[f'{algorithm.upper()}_2'], c=labels)
+        plt.scatter(result[f'{algorithm.upper()}_1'], result[f'{algorithm.upper()}_2'], c=labels, cmap='viridis')
     
     plt.title(f'{algorithm.upper()} 2D {title}')
     plt.xlabel(f'{algorithm.upper()}_1')
@@ -292,3 +293,13 @@ def test_clustering():
     plot(umap_result, best_labels, 'KMEANS', 'umap')
 
     plt.show()
+
+if __name__ == '__main__':
+    if len(sys.argv) == 0:
+        print('Usage:')
+        print('- python unsupervised.py comparison')
+        print('- python unsupervised.py cluster')
+    elif sys.argv[1] == 'comparison':
+        check_dimention_reduction_clustering_algorithm_and_amount()
+    elif sys.argv[1] == 'cluster':
+        test_clustering()
