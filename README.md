@@ -20,4 +20,4 @@ ICA algorithm with 7 dimensions, and K-Means algorithm with 5 clusters. Plot in 
 python unsupervised.py comparison
 ```
 ## Project Results
-You can read about the results in the pdf file[].
+You can read about the results in the [pdf file](blob:https://github.com/7a3a29a6-ea21-49be-ad79-0267f3f96e35).
