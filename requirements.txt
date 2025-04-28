@@ -1,0 +1,9 @@
+numpy
+pandas
+prince
+umap-learn
+kagglehub
+matplotlib
+seaborn
+scikit-learn
+scipy
